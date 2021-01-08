@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    {% with message=get_flashed_messages() %}
+        {% if message %}
+            {% for m in message %}
+                <p>{{m}}</p><br>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block topcontent %}{% endblock %}
+    <a href="/home">home</a>
+    <br>
+    <a href="/changePassword">change your password</a>
+    <br>
+    <a href="/logout">logout</a><br>
+    <a href="/myModelReview">myModel</a><br><br>
+    {% block content %} {% endblock %}
+</body>
+</html>

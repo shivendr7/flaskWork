@@ -1,0 +1,9 @@
+{% extends 'admin.html' %}
+{% block title %} user data
+{% endblock %}
+{% block content %}
+    <h4>users in database</h4><br>
+    {% for x in value: %}
+        <p>{{x.name}}<br>{{x.email}}<br><br></p>
+    {% endfor %}
+{% endblock %}

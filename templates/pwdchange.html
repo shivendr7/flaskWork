@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}change password
+{% endblock %}
+{% block content %}
+<form method="POST">
+    <input type="password" placeholder="current password" name="current"/>
+    <input type="password" placeholder="new password" name="new"/>
+    <input type="submit" value="change">
+
+</form>
+{% endblock %}

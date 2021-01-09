@@ -108,7 +108,7 @@ def pwdchange():
         current=request.form['current']
         new=request.form['new']
         if current==user.password:
-            user.password=current
+            user.password=new
             db.session.commit()
             flash('Password changed successfully')
             return redirect(url_for('home'))
@@ -124,8 +124,9 @@ def model():
     if request.method=='GET':
         return render_template('model.html')
     else:
-        x=request.form['x']
-        flash('output:'+str(m.predict[[x]]))
+        x=int(request.form['x'])
+        
+        flash('output:'+str(m.predict([[x]])[0]))
         return render_template('model.html')
     
 
